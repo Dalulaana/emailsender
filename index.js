@@ -1,5 +1,5 @@
 const nodemailer = require('nodemailer');
-
+// setup
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -7,14 +7,14 @@ const transporter = nodemailer.createTransport({
         pass: 'jfma ilfd xvuq quwr'
     }
 });
-
+// email settings
 const mailOptions = {
     from: 'daianakv12@gmail.com',
     to: 'valikhanagai@gmail.com',
     subject: 'тестирую код',
     text: 'делаю дз по бэку, нужно прогу написать чтобы письма высылать'
 };
-
+// to send email
 function sendEmail() {
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
@@ -24,5 +24,5 @@ function sendEmail() {
         }
     });
 }
-
+// to call function
 sendEmail();
